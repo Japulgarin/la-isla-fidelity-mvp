@@ -1,6 +1,8 @@
-const storageKey = "la-isla-fidelity-v1";
+const cookieName = "la_isla_fidelity_card";
+const legacyStorageKey = "la-isla-fidelity-v1";
 const maxVisits = 5;
 const tapParameter = "tap";
+const cookieMaxAgeSeconds = 60 * 60 * 24 * 365;
 
 const memberIdElement = document.querySelector("#member-id");
 const visitCountElement = document.querySelector("#visit-count");
@@ -13,12 +15,30 @@ function createCard() {
   return { id: crypto.randomUUID().slice(0, 8).toUpperCase(), visits: 0, lastVisitAt: null };
 }
 
-function readCard() {
+function readCookie() {
+  const entry = document.cookie.split("; ").find((item) => item.startsWith(`${cookieName}=`));
+  if (!entry) return null;
   try {
-    const saved = localStorage.getItem(storageKey);
+    return JSON.parse(decodeURIComponent(entry.slice(cookieName.length + 1)));
+  } catch {
+    return null;
+  }
+}
+
+function isValidCard(card) {
+  return card && typeof card.id === "string" && Number.isInteger(card.visits);
+}
+
+function readCard() {
+  const cookieCard = readCookie();
+  if (isValidCard(cookieCard)) {
+    return { ...cookieCard, visits: Math.min(Math.max(cookieCard.visits, 0), maxVisits) };
+  }
+  try {
+    const saved = localStorage.getItem(legacyStorageKey);
     if (!saved) return createCard();
     const card = JSON.parse(saved);
-    if (typeof card.id !== "string" || !Number.isInteger(card.visits)) return createCard();
+    if (!isValidCard(card)) return createCard();
     return { ...card, visits: Math.min(Math.max(card.visits, 0), maxVisits) };
   } catch {
     return createCard();
@@ -26,7 +46,10 @@ function readCard() {
 }
 
 function saveCard(card) {
-  localStorage.setItem(storageKey, JSON.stringify(card));
+  const secureAttribute = window.location.protocol === "https:" ? "; Secure" : "";
+  const value = encodeURIComponent(JSON.stringify(card));
+  document.cookie = `${cookieName}=${value}; Max-Age=${cookieMaxAgeSeconds}; Path=/; SameSite=Lax${secureAttribute}`;
+  localStorage.removeItem(legacyStorageKey);
 }
 
 function render(card, justEarned) {
@@ -54,6 +77,7 @@ function isNfcTap() {
 }
 
 let card = readCard();
+saveCard(card);
 const justEarned = isNfcTap() && card.visits < maxVisits;
 if (justEarned) {
   card = { ...card, visits: card.visits + 1, lastVisitAt: new Date().toISOString() };
@@ -63,9 +87,9 @@ if (justEarned) {
 render(card, justEarned);
 
 resetButton.addEventListener("click", () => {
-  localStorage.removeItem(storageKey);
+  document.cookie = `${cookieName}=; Max-Age=0; Path=/; SameSite=Lax`;
+  localStorage.removeItem(legacyStorageKey);
   card = createCard();
   saveCard(card);
   render(card, false);
 });
-

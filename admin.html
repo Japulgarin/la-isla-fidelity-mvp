@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="description" content="Panel de fidelidad de La Isla Club" />
+    <title>La Isla Club | Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="dashboard-shell">
+      <header class="dashboard-header">
+        <a href="index.html" class="dashboard-brand" aria-label="Volver a La Isla Fidelidad">
+          <img src="photo.jpg" alt="The Girls La Isla Club" />
+          <span>Fidelidad</span>
+        </a>
+        <span class="demo-badge">VISTA DEMO</span>
+      </header>
+
+      <section class="dashboard-intro" aria-labelledby="dashboard-title">
+        <div>
+          <p class="eyebrow">PANEL DEL NEGOCIO</p>
+          <h1 id="dashboard-title">Buenas noches, La Isla.</h1>
+          <p>Un vistazo rápido a cómo está respondiendo tu programa de fidelidad.</p>
+        </div>
+        <p class="period">SEPTIEMBRE 2026</p>
+      </section>
+
+      <section class="metrics-grid" aria-label="Métricas esenciales">
+        <article class="metric-card metric-card--featured">
+          <p class="metric-label">VISITAS ESTE MES</p>
+          <strong>386</strong>
+          <span class="metric-trend">↑ 18% frente al mes anterior</span>
+        </article>
+        <article class="metric-card">
+          <p class="metric-label">TARJETAS ACTIVAS</p>
+          <strong>142</strong>
+          <span>Clientes con progreso guardado</span>
+        </article>
+        <article class="metric-card">
+          <p class="metric-label">RECOMPENSAS ACTIVADAS</p>
+          <strong>48</strong>
+          <span>12.4% de las visitas</span>
+        </article>
+        <article class="metric-card">
+          <p class="metric-label">TASA DE REGRESO</p>
+          <strong>37%</strong>
+          <span>Clientes que volvieron este mes</span>
+        </article>
+      </section>
+
+      <section class="dashboard-section" aria-labelledby="promotion-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ACTIVAS AHORA</p>
+            <h2 id="promotion-title">Promociones del mes</h2>
+          </div>
+          <button type="button" class="outline-button">+ Nueva promoción</button>
+        </div>
+
+        <div class="promotion-grid">
+          <article class="promotion-card">
+            <div class="promotion-art promotion-art--vip"><span>VIP</span></div>
+            <div class="promotion-content">
+              <div class="promotion-meta"><span>RECOMPENSA · SEPTIEMBRE</span><span class="active-state">ACTIVA</span></div>
+              <h3>Baile privado VIP</h3>
+              <p>Al completar cinco visitas, el cliente recibe acceso preferente para disfrutar un baile privado.</p>
+              <div class="promotion-footer"><span>32 recompensas usadas</span><button type="button">Ver detalles →</button></div>
+            </div>
+          </article>
+          <article class="promotion-card">
+            <div class="promotion-art promotion-art--toast"><span>2×1</span></div>
+            <div class="promotion-content">
+              <div class="promotion-meta"><span>VISITA · SEPTIEMBRE</span><span class="active-state">ACTIVA</span></div>
+              <h3>Brindis de bienvenida 2×1</h3>
+              <p>Un beneficio especial para clientes que escanean su tarjeta de fidelidad al llegar al club.</p>
+              <div class="promotion-footer"><span>86 visitas atribuidas</span><button type="button">Ver detalles →</button></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="dashboard-note">Los datos mostrados son de demostración. El panel real se conectará a métricas almacenadas de forma segura.</p>
+    </main>
+  </body>
+</html>

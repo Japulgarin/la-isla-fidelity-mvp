@@ -8,4 +8,4 @@ Program the NFC tag with the deployed URL followed by `?tap=1`. Each tap increme
 
 ## Privacy
 
-This demo stores no customer identity or server-side data. Progress lives only in the visitor's browser and can be reset from the interface.
+This demo stores no customer identity or server-side data. An anonymous fidelity number and visit progress live in a first-party cookie on the visitor's device for one year and can be reset from the interface.

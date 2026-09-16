@@ -62,6 +62,14 @@ h1 { margin: 8px 0 8px; font-size: clamp(2rem, 9vw, 2.55rem); line-height: 1.06;
 }
 .stamp.is-earned { color: #fff8df; background: #221807; border-color: #221807; box-shadow: 0 2px 6px rgba(38, 25, 0, .3); }
 .card-status { min-height: 2.6em; margin: 0; color: #422e0b; font-size: .86rem; line-height: 1.35; }
+.kpi-preview-button { display: flex; align-items: center; gap: 12px; margin-top: 12px; padding: 14px 15px; border: 1px solid rgba(215,174,87,.36); border-radius: 13px; color: #f4f0eb; background: rgba(255,255,255,.045); text-align: left; text-decoration: none; transition: border-color .18s ease, background .18s ease; }
+.kpi-preview-button:hover { border-color: rgba(215,174,87,.8); background: rgba(215,174,87,.1); }
+.kpi-preview-button:focus-visible { outline: 2px solid #f7e4b3; outline-offset: 3px; }
+.kpi-preview-icon { display: grid; width: 33px; height: 33px; place-items: center; border-radius: 9px; color: #f2d991; background: rgba(215,174,87,.18); font-size: 1.1rem; }
+.kpi-preview-button strong, .kpi-preview-button small { display: block; }
+.kpi-preview-button strong { font-size: .84rem; }
+.kpi-preview-button small { margin-top: 2px; color: #aaa3a8; font-size: .72rem; }
+.kpi-preview-arrow { margin-left: auto; color: #d7ae57; font-size: 1.1rem; }
 
 .reward { margin-top: 18px; padding: 18px; border: 1px solid rgba(215,174,87,.54); border-radius: 14px; background: rgba(215,174,87,.1); }
 .reward h2 { margin: 6px 0 5px; font-size: 1.43rem; }
@@ -70,5 +78,46 @@ h1 { margin: 8px 0 8px; font-size: clamp(2rem, 9vw, 2.55rem); line-height: 1.06;
 .reset-button { border: 0; padding: 7px; cursor: pointer; color: #d7ae57; background: transparent; text-decoration: underline; text-underline-offset: 3px; font-size: .78rem; }
 .reset-button:focus-visible { outline: 2px solid #f7e4b3; outline-offset: 3px; border-radius: 3px; }
 
-@media (min-width: 700px) { .club-card { padding: 34px 34px 28px; } }
+.dashboard-shell { width: min(1180px, 100%); margin: 0 auto; padding: 22px 16px 44px; }
+.dashboard-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,.11); }
+.dashboard-brand { display: inline-flex; align-items: center; gap: 10px; color: #f8f6f2; font-weight: 700; text-decoration: none; }
+.dashboard-brand img { width: 43px; height: 43px; object-fit: contain; }
+.dashboard-brand span { letter-spacing: .04em; }
+.demo-badge { border: 1px solid rgba(215,174,87,.5); border-radius: 999px; padding: 6px 10px; color: #d7ae57; font-size: .65rem; font-weight: 700; letter-spacing: .11em; }
+.dashboard-intro { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding: 42px 0 30px; }
+.dashboard-intro h1 { margin: 8px 0 7px; font-size: clamp(2rem, 6vw, 3.35rem); }
+.dashboard-intro p:not(.eyebrow) { max-width: 520px; margin: 0; color: #b8b3b5; line-height: 1.5; }
+.period { margin: 0 0 8px; color: #a8a0a5; font-size: .72rem; font-weight: 700; letter-spacing: .12em; white-space: nowrap; }
+.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.metric-card { min-height: 172px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,.12); border-radius: 16px; background: rgba(255,255,255,.035); }
+.metric-card--featured { border-color: rgba(215,174,87,.6); background: linear-gradient(145deg, rgba(215,174,87,.2), rgba(215,174,87,.055)); }
+.metric-label { margin: 0; color: #aaa3a8; font-size: .68rem; font-weight: 700; letter-spacing: .12em; }
+.metric-card strong { font-family: "Playfair Display", Georgia, serif; font-size: clamp(2rem, 5vw, 2.85rem); line-height: 1; }
+.metric-card span { color: #bdb5aa; font-size: .78rem; line-height: 1.35; }
+.metric-card .metric-trend { color: #e5c981; }
+.dashboard-section { margin-top: 46px; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 18px; }
+.section-heading h2 { margin: 7px 0 0; font-size: clamp(1.65rem, 4vw, 2.2rem); }
+.outline-button { padding: 10px 13px; border: 1px solid rgba(215,174,87,.6); border-radius: 8px; color: #e6cc89; background: transparent; cursor: pointer; font-size: .8rem; }
+.promotion-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.promotion-card { overflow: hidden; border: 1px solid rgba(255,255,255,.12); border-radius: 16px; background: rgba(255,255,255,.03); }
+.promotion-art { height: 138px; display: grid; place-items: center; font-family: "Playfair Display", Georgia, serif; font-size: 2.3rem; letter-spacing: .04em; }
+.promotion-art--vip { color: #f6e2a7; background: radial-gradient(circle at 50% 20%, #735a2b, #1b1212 65%); }
+.promotion-art--toast { color: #f6e2a7; background: radial-gradient(circle at 55% 0%, #824f3c, #1a1011 70%); }
+.promotion-content { padding: 19px; }
+.promotion-meta { display: flex; justify-content: space-between; gap: 8px; color: #a8a0a5; font-size: .64rem; font-weight: 700; letter-spacing: .09em; }
+.active-state { color: #d9bf78; }
+.promotion-card h3 { margin: 13px 0 7px; font-family: "Playfair Display", Georgia, serif; font-size: 1.43rem; }
+.promotion-card p { min-height: 58px; margin: 0; color: #b8b3b5; font-size: .86rem; line-height: 1.45; }
+.promotion-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 18px; color: #d7ae57; font-size: .72rem; }
+.promotion-footer button { border: 0; padding: 0; color: #f4d98f; background: transparent; cursor: pointer; font-size: .75rem; }
+.dashboard-note { margin: 28px 0 0; color: #797277; font-size: .75rem; line-height: 1.45; }
 
+@media (min-width: 700px) { .club-card { padding: 34px 34px 28px; } }
+@media (max-width: 760px) {
+  .dashboard-intro { display: block; padding-top: 32px; }
+  .period { margin-top: 20px; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .metric-card { min-height: 148px; padding: 16px; }
+  .promotion-grid { grid-template-columns: 1fr; }
+}
