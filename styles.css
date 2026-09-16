@@ -77,6 +77,10 @@ h1 { margin: 8px 0 8px; font-size: clamp(2rem, 9vw, 2.55rem); line-height: 1.06;
 .privacy-note { margin: 20px auto 12px; max-width: 300px; color: #aaa3a8; font-size: .76rem; line-height: 1.45; }
 .reset-button { border: 0; padding: 7px; cursor: pointer; color: #d7ae57; background: transparent; text-decoration: underline; text-underline-offset: 3px; font-size: .78rem; }
 .reset-button:focus-visible { outline: 2px solid #f7e4b3; outline-offset: 3px; border-radius: 3px; }
+.joint-footer { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 22px; color: #817a80; font-size: .67rem; line-height: 1.35; text-align: left; }
+.joint-footer img { width: 27px; height: 27px; object-fit: contain; border-radius: 6px; }
+.joint-footer p { margin: 0; }
+.joint-footer span { color: #aaa3a8; }
 
 .dashboard-shell { width: min(1180px, 100%); margin: 0 auto; padding: 22px 16px 44px; }
 .dashboard-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,.11); }
@@ -130,6 +134,7 @@ h1 { margin: 8px 0 8px; font-size: clamp(2rem, 9vw, 2.55rem); line-height: 1.06;
 .promotion-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 18px; color: #d7ae57; font-size: .72rem; }
 .promotion-footer button { border: 0; padding: 0; color: #f4d98f; background: transparent; cursor: pointer; font-size: .75rem; }
 .dashboard-note { margin: 28px 0 0; color: #797277; font-size: .75rem; line-height: 1.45; }
+.joint-footer--dashboard { justify-content: flex-start; margin-top: 20px; }
 
 @media (min-width: 700px) { .club-card { padding: 34px 34px 28px; } }
 @media (max-width: 760px) {
