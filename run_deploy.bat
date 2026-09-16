@@ -13,8 +13,8 @@ if "%~1"=="" (
 
 echo.
 echo Preparing deployment...
-git add -A
-git diff --cached --quiet
+git -c safe.directory="%CD%" add -A
+git -c safe.directory="%CD%" diff --cached --quiet
 if %errorlevel% equ 0 (
   echo No changes to deploy.
   goto :finish
@@ -24,13 +24,13 @@ if not %errorlevel% equ 1 (
   goto :failed
 )
 
-git commit -m "%COMMIT_MESSAGE%"
+git -c safe.directory="%CD%" commit -m "%COMMIT_MESSAGE%"
 if errorlevel 1 (
   echo Commit failed. Deployment was not started.
   goto :failed
 )
 
-git push origin main
+git -c safe.directory="%CD%" push origin main
 if errorlevel 1 (
   echo Push failed. Check your GitHub login and try again.
   goto :failed
