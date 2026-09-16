@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="description" content="La Isla Club — tarjeta de fidelidad" />
+    <title>La Isla Club | Fidelidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="club-card" aria-labelledby="club-name">
+        <div class="top-rule" aria-hidden="true"></div>
+        <img class="club-logo" src="photo.jpg" alt="The Girls La Isla Club" />
+        <p class="eyebrow">EXPERIENCIA LA ISLA</p>
+        <h1 id="club-name">Tu tarjeta de fidelidad</h1>
+        <p class="intro">Cada visita te acerca a una recompensa especial.</p>
+
+        <div class="loyalty-card" aria-live="polite">
+          <div class="card-header">
+            <div>
+              <p class="card-label">MIS VISITAS</p>
+              <p class="card-member" id="member-id">Tarjeta privada</p>
+            </div>
+            <span class="visit-count" id="visit-count">0 / 5</span>
+          </div>
+          <div class="stamps" id="stamps" aria-label="Progreso de visitas"></div>
+          <p class="card-status" id="card-status">Escanea el NFC durante tu visita para recibir tu primer sello.</p>
+        </div>
+
+        <section class="reward" id="reward" hidden aria-live="polite">
+          <span class="reward-kicker">RECOMPENSA DESBLOQUEADA</span>
+          <h2>¡Gracias por elegir La Isla!</h2>
+          <p>Presenta esta tarjeta en el club para recibir tu recompensa especial.</p>
+        </section>
+
+        <p class="privacy-note">Sin registro. Tu progreso se guarda únicamente en este dispositivo.</p>
+        <button class="reset-button" id="reset-button" type="button">Reiniciar demostración</button>
+      </section>
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>
+
