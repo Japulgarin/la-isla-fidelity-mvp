@@ -32,9 +32,9 @@
 
       <section class="metrics-grid" aria-label="Métricas esenciales">
         <article class="metric-card metric-card--featured">
-          <p class="metric-label">VISITAS ESTE MES</p>
+          <p class="metric-label">ESCANEOS NFC</p>
           <strong>386</strong>
-          <span class="metric-trend">↑ 18% frente al mes anterior</span>
+          <span class="metric-trend">Visitas registradas este mes</span>
         </article>
         <article class="metric-card">
           <p class="metric-label">TARJETAS ACTIVAS</p>
@@ -51,6 +51,40 @@
           <strong>37%</strong>
           <span>Clientes que volvieron este mes</span>
         </article>
+      </section>
+
+      <section class="business-summary" aria-labelledby="business-summary-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">RESUMEN DEL NEGOCIO</p>
+            <h2 id="business-summary-title">¿Cómo se ve la inversión?</h2>
+          </div>
+          <span class="calculation-note">DATOS DE DEMOSTRACIÓN</span>
+        </div>
+        <div class="summary-grid">
+          <div class="calculator-card">
+            <p class="metric-label">CALCULADORA SIMPLE</p>
+            <label>Suscripción mensual <span>US$100</span></label>
+            <label>Recompensas usadas
+              <input id="rewards-input" type="number" min="0" value="48" inputmode="numeric" />
+            </label>
+            <label>Gasto medio por visita
+              <div class="currency-input"><span>US$</span><input id="spend-input" type="number" min="0" value="25" inputmode="decimal" /></div>
+            </label>
+            <p class="formula">Ingresos estimados = recompensas usadas × gasto medio.</p>
+          </div>
+          <div class="financial-result">
+            <p class="metric-label">INGRESOS ESTIMADOS</p>
+            <strong id="revenue-output">US$1,200</strong>
+            <span id="revenue-detail">48 visitas atribuidas × US$25</span>
+            <div class="net-result"><span>Después de la suscripción</span><b id="net-output">US$1,100 netos</b></div>
+          </div>
+          <aside class="insight-card" aria-live="polite">
+            <p class="metric-label">RESUMEN INTELIGENTE · DEMO</p>
+            <h3 id="insight-title">El programa está creando retornos.</h3>
+            <p id="insight-copy">386 escaneos NFC y 48 recompensas muestran clientes que vuelven. Prueba una promoción en días tranquilos y compara sus escaneos al final del mes.</p>
+          </aside>
+        </div>
       </section>
 
       <section class="dashboard-section" aria-labelledby="promotion-title">
@@ -86,5 +120,6 @@
 
       <p class="dashboard-note">Los datos mostrados son de demostración. El panel real se conectará a métricas almacenadas de forma segura.</p>
     </main>
+    <script src="dashboard.js" defer></script>
   </body>
 </html>

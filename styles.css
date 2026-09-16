@@ -98,6 +98,24 @@ h1 { margin: 8px 0 8px; font-size: clamp(2rem, 9vw, 2.55rem); line-height: 1.06;
 .dashboard-section { margin-top: 46px; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 18px; }
 .section-heading h2 { margin: 7px 0 0; font-size: clamp(1.65rem, 4vw, 2.2rem); }
+.calculation-note { color: #797277; font-size: .65rem; font-weight: 700; letter-spacing: .1em; }
+.business-summary { margin-top: 46px; }
+.summary-grid { display: grid; grid-template-columns: 1.1fr .9fr 1.15fr; gap: 14px; }
+.calculator-card, .financial-result, .insight-card { min-height: 265px; padding: 20px; border: 1px solid rgba(255,255,255,.12); border-radius: 16px; background: rgba(255,255,255,.03); }
+.calculator-card label { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 15px; color: #ccc6ca; font-size: .83rem; }
+.calculator-card label > span { color: #f0d58b; font-weight: 700; }
+.calculator-card input { width: 66px; border: 1px solid rgba(255,255,255,.18); border-radius: 6px; padding: 6px 7px; color: #f6f2eb; background: #171419; font: inherit; text-align: right; }
+.calculator-card input:focus { outline: 2px solid rgba(215,174,87,.8); outline-offset: 1px; }
+.currency-input { display: flex; align-items: center; gap: 3px; color: #d7ae57; }
+.formula { margin: 17px 0 0; color: #898287; font-size: .7rem; line-height: 1.4; }
+.financial-result { display: flex; flex-direction: column; justify-content: center; border-color: rgba(215,174,87,.45); background: linear-gradient(145deg, rgba(215,174,87,.16), rgba(255,255,255,.025)); }
+.financial-result > strong { margin: 9px 0 4px; font-family: "Playfair Display", Georgia, serif; font-size: clamp(2.35rem, 5vw, 3.2rem); line-height: 1; color: #f7e4b3; }
+.financial-result > span { color: #bdb5aa; font-size: .76rem; }
+.net-result { display: flex; justify-content: space-between; align-items: end; gap: 8px; margin-top: 25px; padding-top: 14px; border-top: 1px solid rgba(215,174,87,.3); color: #c9c0b8; font-size: .73rem; }
+.net-result b { color: #f4db97; font-size: .84rem; text-align: right; }
+.insight-card { background: linear-gradient(145deg, rgba(104,75,127,.2), rgba(255,255,255,.03)); }
+.insight-card h3 { margin: 14px 0 8px; font-family: "Playfair Display", Georgia, serif; font-size: 1.4rem; line-height: 1.15; }
+.insight-card p:last-child { margin: 0; color: #c4bdc4; font-size: .85rem; line-height: 1.52; }
 .outline-button { padding: 10px 13px; border: 1px solid rgba(215,174,87,.6); border-radius: 8px; color: #e6cc89; background: transparent; cursor: pointer; font-size: .8rem; }
 .promotion-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .promotion-card { overflow: hidden; border: 1px solid rgba(255,255,255,.12); border-radius: 16px; background: rgba(255,255,255,.03); }
@@ -120,4 +138,6 @@ h1 { margin: 8px 0 8px; font-size: clamp(2rem, 9vw, 2.55rem); line-height: 1.06;
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
   .metric-card { min-height: 148px; padding: 16px; }
   .promotion-grid { grid-template-columns: 1fr; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .calculator-card, .financial-result, .insight-card { min-height: auto; }
 }
